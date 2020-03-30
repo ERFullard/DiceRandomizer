@@ -20,17 +20,17 @@ namespace DiceRandomizer
         {
             InitializeComponent();
 
-            this.label3.Text = "";
+            this.Timer.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             totalseconds = 6;
 
-            this.timer1.Start();
-            this.label3.Visible = true;
-            this.label1.Visible = false;
-            this.label2.Visible = false;
+            timer1.Start();
+            Timer.Visible = true;
+            Name.Visible = false;
+            JokeType.Visible = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -41,15 +41,15 @@ namespace DiceRandomizer
                 totalseconds--;
                 Thread.Sleep(500);
                 Randomize();
-                this.label3.Text = totalseconds.ToString();
+                this.Timer.Text = totalseconds.ToString();
             }
             else
             { 
-                this.timer1.Stop();
-                this.label3.Text = "";
-                this.label3.Visible = false;
-                this.label1.Visible = true;
-                this.label2.Visible = true;
+                timer1.Stop();
+                Timer.Text = "";
+                Timer.Visible = false;
+                Name.Visible = true;
+                JokeType.Visible = true;
             }
         }
 
@@ -61,7 +61,7 @@ namespace DiceRandomizer
                 {
                     string[] allLines1 = File.ReadAllLines("names.txt");
                     Random rnd1 = new Random();
-                    label1.Text = (allLines1[rnd1.Next(allLines1.Length)]);
+                    Name.Text = (allLines1[rnd1.Next(allLines1.Length)]);
                 }
                 catch (Exception)
                 {
@@ -80,7 +80,7 @@ namespace DiceRandomizer
                 {
                     string[] allLines2 = File.ReadAllLines("jokes.txt");
                     Random rnd2 = new Random();
-                    label2.Text = (allLines2[rnd2.Next(allLines2.Length)]);
+                    JokeType.Text = (allLines2[rnd2.Next(allLines2.Length)]);
                 }
                 catch (Exception)
                 {

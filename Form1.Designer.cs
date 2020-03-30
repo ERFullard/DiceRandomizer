@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.Name = new System.Windows.Forms.Label();
+            this.JokeType = new System.Windows.Forms.Label();
+            this.Timer = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -47,35 +47,35 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // Name
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(49, 94);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(315, 113);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Name";
+            this.Name.AutoSize = true;
+            this.Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name.Location = new System.Drawing.Point(49, 94);
+            this.Name.Name = "Name";
+            this.Name.Size = new System.Drawing.Size(315, 113);
+            this.Name.TabIndex = 2;
+            this.Name.Text = "Name";
             // 
-            // label2
+            // JokeType
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(49, 225);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(510, 113);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Joke Type";
+            this.JokeType.AutoSize = true;
+            this.JokeType.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JokeType.Location = new System.Drawing.Point(49, 225);
+            this.JokeType.Name = "JokeType";
+            this.JokeType.Size = new System.Drawing.Size(510, 113);
+            this.JokeType.TabIndex = 3;
+            this.JokeType.Text = "Joke Type";
             // 
-            // label3
+            // Timer
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(49, 167);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(304, 113);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Timer";
+            this.Timer.AutoSize = true;
+            this.Timer.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Timer.Location = new System.Drawing.Point(49, 167);
+            this.Timer.Name = "Timer";
+            this.Timer.Size = new System.Drawing.Size(304, 113);
+            this.Timer.TabIndex = 4;
+            this.Timer.Text = "Timer";
             // 
             // timer1
             // 
@@ -86,11 +86,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 623);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Timer);
+            this.Controls.Add(this.JokeType);
+            this.Controls.Add(this.Name);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
             this.Text = "Stand-up Meeting";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -100,9 +99,9 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Name;
+        private System.Windows.Forms.Label JokeType;
+        private System.Windows.Forms.Label Timer;
         private System.Windows.Forms.Timer timer1;
     }
 }
