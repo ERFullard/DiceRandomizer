@@ -25,7 +25,7 @@ namespace DiceRandomizer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            totalseconds = 6;
+            totalseconds = 11;
 
             timer1.Start();
             Timer.Visible = true;
