@@ -29,8 +29,6 @@ namespace DiceRandomizer
 
             timer1.Start();
             Timer.Visible = true;
-            Name.Visible = false;
-            JokeType.Visible = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -48,8 +46,6 @@ namespace DiceRandomizer
                 timer1.Stop();
                 Timer.Text = "";
                 Timer.Visible = false;
-                Name.Visible = true;
-                JokeType.Visible = true;
             }
         }
 
