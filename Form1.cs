@@ -14,7 +14,7 @@ namespace DiceRandomizer
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
-        private int timer_count;
+        private int timer_count = 0;
 
         public Form1()
         {
@@ -28,12 +28,10 @@ namespace DiceRandomizer
             timer_count = 11;
 
             timer1.Start();
-            Timer.Visible = true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
             if (timer_count > 0)
             {
                 timer_count--;
