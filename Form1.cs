@@ -14,7 +14,7 @@ namespace DiceRandomizer
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
-        private int totalseconds;
+        private int timer_count;
 
         public Form1()
         {
@@ -25,7 +25,7 @@ namespace DiceRandomizer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            totalseconds = 11;
+            timer_count = 11;
 
             timer1.Start();
             Timer.Visible = true;
@@ -34,18 +34,17 @@ namespace DiceRandomizer
         private void timer1_Tick(object sender, EventArgs e)
         {
             
-            if (totalseconds > 0)
+            if (timer_count > 0)
             {
-                totalseconds--;
+                timer_count--;
                 Thread.Sleep(500);
+                this.Timer.Text = timer_count.ToString();
                 Randomize();
-                this.Timer.Text = totalseconds.ToString();
             }
             else
             { 
                 timer1.Stop();
-                Timer.Text = "";
-                Timer.Visible = false;
+                Timer.Text = "Tag, you're it!";
             }
         }
 
@@ -57,7 +56,7 @@ namespace DiceRandomizer
                 {
                     string[] allLines1 = File.ReadAllLines("names.txt");
                     Random rnd1 = new Random();
-                    Name.Text = (allLines1[rnd1.Next(allLines1.Length)]);
+                    UserName.Text = (allLines1[rnd1.Next(allLines1.Length)]);
                 }
                 catch (Exception)
                 {

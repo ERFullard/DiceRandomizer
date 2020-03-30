@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
-            this.Name = new System.Windows.Forms.Label();
+            this.UserName = new System.Windows.Forms.Label();
             this.JokeType = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -47,15 +47,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Name
+            // UserName
             // 
-            this.Name.AutoSize = true;
-            this.Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name.Location = new System.Drawing.Point(49, 94);
-            this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(315, 113);
-            this.Name.TabIndex = 2;
-            this.Name.Text = "Name";
+            this.UserName.AutoSize = true;
+            this.UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserName.Location = new System.Drawing.Point(49, 94);
+            this.UserName.Name = "UserName";
+            this.UserName.Size = new System.Drawing.Size(315, 113);
+            this.UserName.TabIndex = 2;
+            this.UserName.Text = "Name";
             // 
             // JokeType
             // 
@@ -88,8 +88,9 @@
             this.ClientSize = new System.Drawing.Size(1028, 623);
             this.Controls.Add(this.Timer);
             this.Controls.Add(this.JokeType);
-            this.Controls.Add(this.Name);
+            this.Controls.Add(this.UserName);
             this.Controls.Add(this.button1);
+            this.Name = "Form1";
             this.Text = "Stand-up Meeting";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -99,7 +100,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label Name;
+        private System.Windows.Forms.Label UserName;
         private System.Windows.Forms.Label JokeType;
         private System.Windows.Forms.Label Timer;
         private System.Windows.Forms.Timer timer1;
