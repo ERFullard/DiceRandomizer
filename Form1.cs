@@ -21,6 +21,7 @@ namespace DiceRandomizer
             InitializeComponent();
 
             Timer.Text = "";
+            CheckFiles();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,44 +47,63 @@ namespace DiceRandomizer
             }
         }
 
-        public void Randomize()
+        public void CheckFiles()
         {
             if (File.Exists("names.txt"))
             {
-                try
+                if (File.ReadAllLines("names.txt").Length == 0)
                 {
-                    string[] allLines1 = File.ReadAllLines("names.txt");
-                    Random rnd1 = new Random();
-                    UserName.Text = (allLines1[rnd1.Next(allLines1.Length)]);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Add names below each other in the names.txt file", "No names found!");
+                    MessageBox.Show("Add names below each other in the names.txt file. The application will now close.", "No names found!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Environment.Exit(0);
                 }
             }
             else
             {
                 File.Create("names.txt").Dispose();
-                MessageBox.Show("Add names below each other in the names.txt file", "Add names to the file!");
+                MessageBox.Show("File names.txt created. Add names below each other in the names.txt file. The application will now close.", "Add names to the file!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
             }
 
             if (File.Exists("jokes.txt"))
             {
-                try
+                if (File.ReadAllLines("jokes.txt").Length == 0)
                 {
-                    string[] allLines2 = File.ReadAllLines("jokes.txt");
-                    Random rnd2 = new Random();
-                    JokeType.Text = (allLines2[rnd2.Next(allLines2.Length)]);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Add jokes below each other in the jokes.txt file", "No jokes found!");
+                    MessageBox.Show("Add jokes below each other in the jokes.txt file. The application will now close.", "No jokes found!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Environment.Exit(0);
                 }
             }
             else
             {
                 File.Create("jokes.txt").Dispose();
-                MessageBox.Show("Add jokes below each other in the jokes.txt file", "Add jokes to the file!");
+                MessageBox.Show("File jokes.txt created. Add jokes below each other in the jokes.txt file. The application will now close.", "Add jokes to the file!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
+            }
+        }
+
+        public void Randomize()
+        {
+            try
+            {
+                string[] allLines1 = File.ReadAllLines("names.txt");
+                Random rnd1 = new Random();
+                UserName.Text = (allLines1[rnd1.Next(allLines1.Length)]);
+            }
+            catch(IndexOutOfRangeException)
+            {
+                MessageBox.Show("Add names below each other in the names.txt file. The application will now close.", "No names found!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
+            }
+
+            try
+            {
+                string[] allLines2 = File.ReadAllLines("jokes.txt");
+                Random rnd2 = new Random();
+                JokeType.Text = (allLines2[rnd2.Next(allLines2.Length)]);
+            }
+            catch(IndexOutOfRangeException)
+            {
+                MessageBox.Show("Add jokes below each other in the jokes.txt file. The application will now close.", "No jokes found!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
             }
         }
     }
