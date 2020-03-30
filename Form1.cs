@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -38,7 +39,7 @@ namespace DiceRandomizer
             if (totalseconds > 0)
             {
                 totalseconds--;
-                System.Threading.Thread.Sleep(500);
+                Thread.Sleep(500);
                 Randomize();
                 this.label3.Text = totalseconds.ToString();
             }
