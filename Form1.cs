@@ -13,12 +13,47 @@ namespace DiceRandomizer
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
+        private int totalseconds;
+
         public Form1()
         {
             InitializeComponent();
+
+            this.label3.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            totalseconds = 6;
+
+            this.timer1.Start();
+            this.label3.Visible = true;
+            this.label1.Visible = false;
+            this.label2.Visible = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+            if (totalseconds > 0)
+            {
+                totalseconds--;
+                System.Threading.Thread.Sleep(500);
+                Randomize();
+                this.label3.Text = totalseconds.ToString();
+            }
+
+            if (totalseconds == 0)
+            {
+                this.timer1.Stop();
+                this.label3.Text = "";
+                this.label3.Visible = false;
+                this.label1.Visible = true;
+                this.label2.Visible = true;
+            }
+        }
+
+        public void Randomize()
         {
             if (File.Exists("names.txt"))
             {
