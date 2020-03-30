@@ -20,7 +20,7 @@ namespace DiceRandomizer
         {
             InitializeComponent();
 
-            this.Timer.Text = "";
+            Timer.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace DiceRandomizer
             {
                 timer_count--;
                 Thread.Sleep(500);
-                this.Timer.Text = timer_count.ToString();
+                Timer.Text = timer_count.ToString();
                 Randomize();
             }
             else
