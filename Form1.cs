@@ -42,9 +42,8 @@ namespace DiceRandomizer
                 Randomize();
                 this.label3.Text = totalseconds.ToString();
             }
-
-            if (totalseconds == 0)
-            {
+            else
+            { 
                 this.timer1.Stop();
                 this.label3.Text = "";
                 this.label3.Visible = false;
